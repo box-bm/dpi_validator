@@ -1,3 +1,4 @@
+/// [departments] is a list of every department in guatemala
 Map<String, String> departments = {
   "01": "GUATEMALA",
   "02": "EL PROGRESO",

@@ -1,3 +1,4 @@
+/// [municipalities] is a list of every municipality with the code
 Map<String, String> municipalities = {
   "0101": "Municipio de Guatemala",
   "0102": "Santa Catarina Pinula",

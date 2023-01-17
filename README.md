@@ -1,39 +1,44 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# DPI Validator
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A package for check the DPI.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This plugin works fine in any platform (Android, iOS, MacOS, Linux and Windows).
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+| Feature               | Android | iOS | MacOS | Windows | Linux | Web |
+| --------------------- | ------- | --- | ----- | ------- | ----- | --- |
+| validateDPI           | ✅      | ✅  | ✅    | ✅      | ✅    | ✅  |
+| findDepartmentByDPI   | ✅      | ✅  | ✅    | ✅      | ✅    | ✅  |
+| findMunicipalityByDPI | ✅      | ✅  | ✅    | ✅      | ✅    | ✅  |
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+This plugin works only in Guatemala City
+Only you need to install and use that.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+From any place of your code, only call function.
 
 ```dart
-const like = 'sample';
+import 'package:dpi_validator/dpi_validator.dart';
+
+// Will return an object.
+// DPIResponse(
+//  message: "OK",
+//  isValid: true,
+//  municipality: "Municipio de Guatemala",
+//  department: "GUATEMALA")
+validateDPI("your dpi");
+
+// Will return a string. For example: "Municipio de Guatemala"
+findMunicipalityByDPI("your dpi");
+
+// Will return a string. For example: "GUATEMALA", "JUTIAPA"
+findDepartmentByDPI("your dpi");
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+This plugins works offline.
