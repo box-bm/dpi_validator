@@ -11,7 +11,7 @@ import 'data/departments.dart';
 /// findDepartmentByDPI("1234567890101") == "GUATEMALA"
 /// ```
 String findDepartmentByDPI(String dpi) {
-  if (dpi.length == 13) throw 'DPI require 13 digits';
+  if (dpi.length != 13) throw 'DPI require 13 digits';
 
   var departmentCode = dpi.substring(9, 11);
   if (!departments.containsKey(departmentCode)) {

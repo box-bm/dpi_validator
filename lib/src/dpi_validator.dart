@@ -1,9 +1,9 @@
 import 'package:dpi_validator/dpi_validator.dart';
 import 'package:dpi_validator/src/dpi_response.dart';
 
-/// Check nit number and return an boolean value. if it's ok, send `true` or else send `false`
+/// Check dpi it's ok following two simples rules, have 13 characters and
 ///
-/// It require only [nit] as a param. This will be input to check.
+/// It require only [dpi] as a param. This will be input to check.
 ///
 /// ```dart
 /// validateDPI("") === throw "The DPI needs only digits"

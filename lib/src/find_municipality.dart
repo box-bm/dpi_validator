@@ -12,7 +12,7 @@ import 'package:dpi_validator/src/data/municipalities.dart';
 /// ```
 
 String findMunicipalityByDPI(String dpi) {
-  if (dpi.length == 13) throw 'DPI require 13 digits';
+  if (dpi.length != 13) throw 'DPI require 13 digits';
 
   var municipalityCode = dpi.substring(9);
   if (!municipalities.containsKey(municipalityCode)) {
