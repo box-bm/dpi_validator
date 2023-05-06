@@ -1,5 +1,6 @@
 import 'package:dpi_validator/dpi_validator.dart';
-import 'package:dpi_validator/src/dpi_response.dart';
+import 'package:dpi_validator/src/check_digit.dart';
+import 'package:dpi_validator/src/models/dpi_response.dart';
 
 /// Check dpi it's ok following two simples rules, have 13 characters and
 ///
@@ -22,6 +23,9 @@ DPIResponse validateDPI(dynamic dpi) {
     if (dpi.length != 13) {
       throw 'DPI require 13 digits';
     }
+
+    // Checking digits by rule 11;
+    checkDigitByDPI(dpi);
 
     // find in each list and get data by municipality and department
     String municipality = findMunicipalityByDPI(dpi);
