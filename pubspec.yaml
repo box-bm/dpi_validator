@@ -1,6 +1,6 @@
 name: dpi_validator
 description: A DPI validator. This validate and return values of department and municipality by DPI.
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/box-bm/dpi_validator
 repository: https://github.com/box-bm/dpi_validator
 issue_tracker: https://github.com/box-bm/dpi_validator/issues
