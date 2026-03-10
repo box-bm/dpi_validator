@@ -10,24 +10,37 @@
 /// ```
 class DPIResponse {
   /// [message] is a description of the result
-  String message;
+  final String message;
 
   /// [isValid] is boolean type, send `true` if it's valid or `false` if has error
-  bool isValid;
+  final bool isValid;
 
   /// [department] name what return a `string` and it's filled when validate dpi
-  String? department;
+  final String? department;
 
   /// [municipality] name what return a `string` and it's filled when validate dpi
-  String? municipality;
+  final String? municipality;
 
   /// [DPIResponse] is the class what will return and show feedback when validate DPI
-  DPIResponse({
+  const DPIResponse({
     required this.message,
     required this.isValid,
     this.department,
     this.municipality,
   });
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DPIResponse &&
+          message == other.message &&
+          isValid == other.isValid &&
+          department == other.department &&
+          municipality == other.municipality;
+
+  @override
+  int get hashCode =>
+      Object.hash(message, isValid, department, municipality);
 
   @override
   String toString() {

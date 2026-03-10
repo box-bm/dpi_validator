@@ -14,12 +14,10 @@ import 'package:dpi_validator/src/data/municipalities.dart';
 String findMunicipalityByDPI(String dpi) {
   if (dpi.length != 13) throw 'DPI require 13 digits';
 
-  var municipalityCode = dpi.substring(9);
-  if (!municipalities.containsKey(municipalityCode)) {
-    throw "Municipality not exist";
-  }
+  final municipalityCode = dpi.substring(9);
+  final municipality = municipalities[municipalityCode];
 
-  return municipalities.entries
-      .firstWhere((element) => element.key == municipalityCode)
-      .value;
+  if (municipality == null) throw 'Municipality not exist';
+
+  return municipality;
 }

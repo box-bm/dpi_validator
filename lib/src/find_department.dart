@@ -13,12 +13,10 @@ import 'data/departments.dart';
 String findDepartmentByDPI(String dpi) {
   if (dpi.length != 13) throw 'DPI require 13 digits';
 
-  var departmentCode = dpi.substring(9, 11);
-  if (!departments.containsKey(departmentCode)) {
-    throw "Department not exist";
-  }
+  final departmentCode = dpi.substring(9, 11);
+  final department = departments[departmentCode];
 
-  return departments.entries
-      .firstWhere((element) => element.key == departmentCode)
-      .value;
+  if (department == null) throw 'Department not exist';
+
+  return department;
 }
