@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## v1.0.2 - 2026-03-11
+
+### What's Changed
+
+- feat: updated workflows (#6)
+
 ## [1.0.2] - 2026-03-10
 
 ### Changed
