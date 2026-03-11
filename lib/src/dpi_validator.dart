@@ -15,7 +15,7 @@ DPIResponse validateDPI(dynamic dpi) {
   try {
     dpi = dpi.toString();
     // validate if has only numbers
-    if (int.tryParse(dpi) == null) {
+    if (!RegExp(r'^\d+$').hasMatch(dpi)) {
       throw 'The DPI needs only digits';
     }
 

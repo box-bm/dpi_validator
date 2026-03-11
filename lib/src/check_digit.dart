@@ -8,22 +8,16 @@
 /// ```
 
 void checkDigitByDPI(String dpi) {
-  int result = 0;
+  int sum = 0;
+  final digits = dpi.substring(0, 8).split('').reversed.toList();
 
-  dpi
-      .substring(0, 8)
-      .split('')
-      .reversed
-      .toList()
-      .map((e) => int.parse(e))
-      .toList()
-      .asMap()
-      .forEach((index, element) {
-    result += (element * (index + 2));
-  });
-  int calculatedLastValue = (11 - (result % 11)) % 11;
+  for (int i = 0; i < digits.length; i++) {
+    sum += int.parse(digits[i]) * (i + 2);
+  }
 
-  if (calculatedLastValue.toString() != dpi.substring(8, 9)) {
-    throw "DPI invalid";
+  final calculatedCheckDigit = (11 - (sum % 11)) % 11;
+
+  if (calculatedCheckDigit != int.parse(dpi[8])) {
+    throw 'DPI invalid';
   }
 }
